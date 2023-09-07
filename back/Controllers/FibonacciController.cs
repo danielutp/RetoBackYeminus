@@ -1,11 +1,12 @@
-﻿using back.Service;
+﻿using back.Model;
+using back.Service;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace back.Controllers
 {
 
-    [Controller]
+    [ApiController]
     [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     public class FibonacciController : Controller
@@ -18,10 +19,14 @@ namespace back.Controllers
         }
 
         [HttpPost("fibonaci")]
-        public async Task<IActionResult> addFrase(int numero)
+        public async Task<IActionResult> addFrase(FibonacciRequest fibonacciRequest)
         {
-            bool presente = _fibonacciService.presente(numero);
-            return Ok(presente);
+
+            var fibonacci = new FibonacciP()
+            {
+              presente = _fibonacciService.presente(fibonacciRequest.numero)
+            }; 
+            return Ok(fibonacci);
         }
     }
 }

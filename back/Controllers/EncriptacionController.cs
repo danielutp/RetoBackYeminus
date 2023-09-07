@@ -1,10 +1,11 @@
-﻿using back.Service;
+﻿using back.Model;
+using back.Service;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace back.Controllers
 {
-    [Controller]
+    [ApiController]
     [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     public class EncriptacionController : Controller
@@ -17,18 +18,24 @@ namespace back.Controllers
         }
 
         [HttpPost("encriptar")]
-        public async Task<IActionResult> encriptar(string fraseRequest)
+        public async Task<IActionResult> encriptar(EncriptacionRequest encriptacionRequest)
         {
-            string frase = _EncriptacionService.encriptar(fraseRequest, +5);
+            var frase = new EncriptacionRequest()
+            {
+                frase = _EncriptacionService.encriptar(encriptacionRequest.frase, +5)
+            };
             return Ok(frase);
         }
 
 
 
         [HttpPost("desencriptar")]
-        public async Task<IActionResult> decencriptar(string fraseRequest)
+        public async Task<IActionResult> desencriptar(EncriptacionRequest encriptacionRequest)
         {
-            string frase = _EncriptacionService.encriptar(fraseRequest, -5);
+            var frase = new EncriptacionRequest()
+            {
+                frase = _EncriptacionService.encriptar(encriptacionRequest.frase, -5)
+            };
             return Ok(frase);
         }
     }

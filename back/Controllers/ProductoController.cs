@@ -46,21 +46,22 @@ namespace back.Controllers
 
             return Ok(product);
         }
+
         [HttpPut]
         [Route("{id:guid}")]
-        public IActionResult UpdateProduct([FromRoute] Guid id, UpdateProductoRequest updateProductoRequest)
+        public async Task<IActionResult> UpdateProduct([FromRoute] Guid id, UpdateProductoRequest updateProductRequest)
         {
-            var product = dbContext.Products.Find(id);
+            var product = await dbContext.Products.FindAsync(id);
 
             if (product != null)
             {
 
-                product.codigo = updateProductoRequest.codigo;
-                product.descripcion = updateProductoRequest.descripcion;
-                product.listaDePrecios = updateProductoRequest.listaDePrecios;
-                product.imagen = updateProductoRequest.imagen;
-                product.productoParaLaVenta = updateProductoRequest.productoParaLaVenta;
-                product.porcentajeIva = updateProductoRequest.porcentajeIva;
+                product.codigo = updateProductRequest.codigo;
+                product.descripcion = updateProductRequest.descripcion;
+                product.listaDePrecios = updateProductRequest.listaDePrecios;
+                product.imagen = updateProductRequest.imagen;
+                product.productoParaLaVenta = updateProductRequest.productoParaLaVenta;
+                product.porcentajeIva = updateProductRequest.porcentajeIva;
 
                 dbContext.SaveChangesAsync();
 
@@ -74,7 +75,7 @@ namespace back.Controllers
         [Route("{id:guid}")]
         public IActionResult GetProduct([FromRoute] Guid id)
         {
-            var product = dbContext.Products.FindAsync(id);
+            var product = dbContext.Products.Find(id);
             if (product != null)
             {
                 return Ok(product);
@@ -82,21 +83,19 @@ namespace back.Controllers
             return NotFound();
         }
 
-
         [HttpDelete]
         [Route("{id:guid}")]
-        public IActionResult DeleteProduct([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteProduct([FromRoute] Guid id)
         {
-            var product =  dbContext.Products.FindAsync(id);
+            var product = await dbContext.Products.FindAsync(id);
 
             if (product != null)
             {
                 dbContext.Remove(product);
-                dbContext.SaveChangesAsync();
+                await dbContext.SaveChangesAsync();
                 return Ok(product);
             }
             return NotFound();
         }
-
     }
 }
