@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace back.Controllers
 {
+    [Controller]
+    [Route("api/[controller]")]
     public class EncriptacionController : Controller
     {
         private readonly IEncriptacionService _EncriptacionService;
