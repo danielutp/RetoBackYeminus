@@ -19,14 +19,14 @@ namespace back.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public IActionResult GetProducts()
         {
-            return Ok(dbContext.Products.ToListAsync());
+            return Ok(dbContext.Products.ToList());
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(AddProductoRequest addProductoRequest)
+        public IActionResult AddProduct(AddProductoRequest addProductoRequest)
         {
             var product = new Producto()
             {
@@ -39,17 +39,16 @@ namespace back.Controllers
                 porcentajeIva = addProductoRequest.porcentajeIva
             };
 
-            await dbContext.Products.AddAsync(product);
-            await dbContext.SaveChangesAsync();
+             dbContext.Products.Add(product);
+             dbContext.SaveChangesAsync();
 
             return Ok(product);
         }
-
         [HttpPut]
         [Route("{id:guid}")]
-        public async Task<IActionResult> UpdateProduct([FromRoute] Guid id, UpdateProductoRequest updateProductoRequest)
+        public IActionResult UpdateProduct([FromRoute] Guid id, UpdateProductoRequest updateProductoRequest)
         {
-            var product = await dbContext.Products.FindAsync(id);
+            var product = dbContext.Products.Find(id);
 
             if (product != null)
             {
@@ -69,16 +68,29 @@ namespace back.Controllers
 
         }
 
+        [HttpGet]
+        [Route("{id:guid}")]
+        public IActionResult GetProduct([FromRoute] Guid id)
+        {
+            var product = dbContext.Products.FindAsync(id);
+            if (product != null)
+            {
+                return Ok(product);
+            }
+            return NotFound();
+        }
+
+
         [HttpDelete]
         [Route("{id:guid}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] Guid id)
+        public IActionResult DeleteProduct([FromRoute] Guid id)
         {
-            var product = await dbContext.Products.FindAsync(id);
+            var product =  dbContext.Products.FindAsync(id);
 
             if (product != null)
             {
                 dbContext.Remove(product);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChangesAsync();
                 return Ok(product);
             }
             return NotFound();

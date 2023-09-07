@@ -23,12 +23,6 @@
             }
 
             return fraseEncriptada;
-        }
-
-
-        public string deseencriptar(string frase)
-        {
-            return encriptar(frase, -5);
-        }
+        }        
     }
 }
