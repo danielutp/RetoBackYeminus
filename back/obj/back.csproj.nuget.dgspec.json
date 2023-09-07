@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\back\\back\\back.csproj": {}
+    "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\Back\\back\\back.csproj": {}
   },
   "projects": {
-    "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\back\\back\\back.csproj": {
+    "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\Back\\back\\back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\back\\back\\back.csproj",
+        "projectUniqueName": "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\Back\\back\\back.csproj",
         "projectName": "back",
-        "projectPath": "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\back\\back\\back.csproj",
+        "projectPath": "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\Back\\back\\back.csproj",
         "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\back\\back\\obj\\",
+        "outputPath": "J:\\Users\\Daniel\\Desktop\\RetoYeminus\\Backend\\Back\\back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
