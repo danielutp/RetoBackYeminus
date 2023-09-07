@@ -1,4 +1,6 @@
+using back.Data;
 using back.Service;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IEncriptacionService, EncriptacionService>();
 builder.Services.AddScoped<IFibonacciService, FibonacciService>();
+builder.Services.AddDbContext<ProductoAPIDbContext>(options => options.UseInMemoryDatabase("ContactsDb"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

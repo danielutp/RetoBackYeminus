@@ -15,7 +15,7 @@ namespace back.Controllers
         }
 
         [HttpPost("encriptar")]
-        public async Task<IActionResult> addFrase(string fraseRequest)
+        public async Task<IActionResult> encriptar(string fraseRequest)
         {
             string frase = _EncriptacionService.encriptar(fraseRequest, +5);
             return Ok(frase);

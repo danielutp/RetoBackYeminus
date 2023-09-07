@@ -30,3 +30,14 @@ J:\Users\Daniel\Desktop\RetoYeminus\Backend\back\back\obj\Debug\net6.0\refint\ba
 J:\Users\Daniel\Desktop\RetoYeminus\Backend\back\back\obj\Debug\net6.0\back.pdb
 J:\Users\Daniel\Desktop\RetoYeminus\Backend\back\back\obj\Debug\net6.0\back.genruntimeconfig.cache
 J:\Users\Daniel\Desktop\RetoYeminus\Backend\back\back\obj\Debug\net6.0\ref\back.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+J:\Users\Daniel\Desktop\RetoYeminus\Backend\Back\back\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
