@@ -1,9 +1,11 @@
 ﻿using back.Service;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace back.Controllers
 {
     [Controller]
+    [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     public class EncriptacionController : Controller
     {

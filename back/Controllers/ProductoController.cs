@@ -1,5 +1,6 @@
 ﻿using back.Data;
 using back.Model;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,7 @@ namespace back.Controllers
 {
 
     [ApiController]
+    [EnableCors("ReglasCors")]
     [Route("api/controller")]
     public class ProductoControlador : Controller
 

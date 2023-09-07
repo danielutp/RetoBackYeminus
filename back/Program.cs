@@ -14,6 +14,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEncriptacionService, EncriptacionService>();
 builder.Services.AddScoped<IFibonacciService, FibonacciService>();
 builder.Services.AddDbContext<ProductoAPIDbContext>(options => options.UseInMemoryDatabase("ContactsDb"));
+
+var misReglasCors = "ReglasCors";
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(name: misReglasCors, builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(misReglasCors);
 
 app.UseHttpsRedirection();
 
